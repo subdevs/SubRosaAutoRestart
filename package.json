@@ -1,0 +1,17 @@
+{
+  "name": "sr-restart",
+  "version": "1.0.0",
+  "description": "Restart Sub Rosa Server if it is not running",
+  "main": "sr-server.js",
+  "scripts": {
+    "start": "node sr-server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "console-stamp": "^3.0.6",
+    "dotenv": "^16.0.1",
+    "pteroly": "^1.7.8",
+    "sub-rosa-servers": "^1.1.0"
+  }
+}
