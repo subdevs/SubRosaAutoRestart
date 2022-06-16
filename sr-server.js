@@ -13,6 +13,7 @@ const Logger = new console.Console(output, errorOutput);
 require("console-stamp")(Logger, {
   stdout: output,
   stderr: errorOutput,
+  format: ":date(yyyy/mm/dd HH:MM:ss)",
 });
 // End Logging Stuff
 
