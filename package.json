@@ -9,6 +9,9 @@
   "version": "1.0.0",
   "description": "Daemon to check if a server is seen by the Server Browser and automatically reset/restart if not",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "repository": "https://github.com/subdevs/SubRosaAutoRestart",
   "author": "SubDevs <99207825+subdevs-user@users.noreply.github.com>",
   "license": "MIT"
