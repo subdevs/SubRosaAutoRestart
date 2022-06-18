@@ -1,17 +1,15 @@
 {
-  "name": "sr-restart",
-  "version": "1.0.0",
-  "description": "Restart Sub Rosa Server if it is not running",
-  "main": "sr-server.js",
-  "scripts": {
-    "start": "node sr-server.js"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "console-stamp": "^3.0.6",
     "dotenv": "^16.0.1",
     "pteroly": "^1.7.8",
     "sub-rosa-servers": "^1.1.0"
-  }
+  },
+  "name": "SubRosaAutoRestart",
+  "version": "1.0.0",
+  "description": "Daemon to check if a server is seen by the Server Browser and automatically reset/restart if not",
+  "main": "index.js",
+  "repository": "https://github.com/subdevs/SubRosaAutoRestart",
+  "author": "SubDevs <99207825+subdevs-user@users.noreply.github.com>",
+  "license": "MIT"
 }
