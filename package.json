@@ -5,7 +5,7 @@
     "pteroly": "^1.7.8",
     "sub-rosa-servers": "^1.1.0"
   },
-  "name": "SubRosaAutoRestart",
+  "name": "subrosa-auto-restart",
   "version": "1.0.0",
   "description": "Daemon to check if a server is seen by the Server Browser and automatically reset/restart if not",
   "main": "index.js",
