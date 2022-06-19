@@ -89,7 +89,7 @@ async function main() {
       LogFunction(
         `Server ${server.name} with IP ${server.address}:${server.port} and latency ${server.latency} has a high ping.`
       );
-      if (process.env.resetServer) {
+      if (process.env.ResetServer) {
         await delay(process.env.ResetServerDelay * 1000);
 
         LogFunction(
@@ -106,7 +106,7 @@ async function main() {
         // );
         // }
         // TODO: Add an option to restart the server if the ping is too high and the server is not resetting
-        // if (process.env.restartServer) {
+        // if (process.env.RestartServer) {
         //   await delay(process.env.RestartServerDelay * 1000);
         //   LogFunction(
         //     `Restarting Server ${server.name} with IP ${server.address}:${server.port} and latency ${server.latency}.`
@@ -119,7 +119,7 @@ async function main() {
     LogFunction(
       `Server ${process.env.SubRosaServerIP}:${process.env.SubRosaServerPort} is offline.`
     );
-    if (process.env.restartServer) {
+    if (process.env.RestartServer) {
       await delay(process.env.RestartServerDelay * 1000);
       LogFunction(
         `Restarting Server ${process.env.SubRosaServerIP}:${process.env.SubRosaServerPort}.`
@@ -130,7 +130,7 @@ async function main() {
   // Delay next run
   await delay(process.env.CheckDelay * 1000);
   // Loop forever
-  // main();
+  main();
 }
 // End Main Function
 
