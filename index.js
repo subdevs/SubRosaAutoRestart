@@ -122,7 +122,7 @@ async function main() {
     if (process.env.restartServer) {
       await delay(process.env.RestartServerDelay * 1000);
       LogFunction(
-        `Restarting Server ${server.name} with IP ${server.address}:${server.port} and latency ${server.latency}.`
+        `Restarting Server ${process.env.SubRosaServerIP}:${process.env.SubRosaServerPort}.`
       );
       restartServer(process.env.PteroServerID);
     }
