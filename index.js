@@ -36,23 +36,9 @@ async function PterolyLogin() {
     (loggedIn, errorMsg) => {
       // fail message if loggedIn is false and errorMsg is not null or undefined and success message if loggedIn is true
       if (!loggedIn) {
-        if (process.env.consoleLog) {
-          console.log("Pterodactyl Login Failed. " + errorMsg);
-        }
-        if (process.env.LogFile) {
-          {
-            Logger.log("Pterodactyl Login Failed. " + errorMsg);
-          }
-        }
+        LogErrorFunction(`Pterodactyl Login Failed. ${errorMsg}`);
       } else {
-        if (process.env.consoleLog) {
-          console.log("Pterodactyl Login Successful");
-        }
-        if (process.env.LogFile) {
-          {
-            Logger.log("Pterodactyl Login Successful");
-          }
-        }
+        LogFunction(`Pterodactyl Login Successful`);
         main();
       }
     }
@@ -71,6 +57,17 @@ async function LogFunction(message) {
     }
   }
 }
+async function LogErrorFunction(message) {
+  if (process.env.consoleLog) {
+    console.error(message);
+  }
+  if (process.env.LogFile) {
+    {
+      Logger.error(message);
+    }
+  }
+}
+
 // End Log Function
 
 // Main Function
@@ -107,15 +104,16 @@ async function main() {
         //     server.address == process.env.SubRosaServerIP &&
         //     server.port == process.env.SubRosaServerPort
         // );
+        // }
+        // TODO: Add an option to restart the server if the ping is too high and the server is not resetting
+        // if (process.env.restartServer) {
+        //   await delay(process.env.RestartServerDelay * 1000);
+        //   LogFunction(
+        //     `Restarting Server ${server.name} with IP ${server.address}:${server.port} and latency ${server.latency}.`
+        //   );
+        //   restartServer(process.env.PteroServerID);
+        // }
       }
-      // TODO: Add an option to restart the server if the ping is too high and the server is not resetting
-      // if (process.env.restartServer) {
-      //   await delay(process.env.RestartServerDelay * 1000);
-      //   LogFunction(
-      //     `Restarting Server ${server.name} with IP ${server.address}:${server.port} and latency ${server.latency}.`
-      //   );
-      //   restartServer(process.env.PteroServerID);
-      // }
     }
   } else {
     LogFunction(
