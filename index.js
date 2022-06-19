@@ -48,20 +48,20 @@ async function PterolyLogin() {
 
 // Log Function
 async function LogFunction(message) {
-  if (process.env.consoleLog) {
+  if (process.env.LogToConsole) {
     console.log(message);
   }
-  if (process.env.LogFile) {
+  if (process.env.LogToFile) {
     {
       Logger.log(message);
     }
   }
 }
 async function LogErrorFunction(message) {
-  if (process.env.consoleLog) {
+  if (process.env.LogToConsole) {
     console.error(message);
   }
-  if (process.env.LogFile) {
+  if (process.env.LogToFile) {
     {
       Logger.error(message);
     }
